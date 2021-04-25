@@ -1,0 +1,28 @@
+<%- include('includes/head.ejs')%>
+
+<%- include('includes/navbar.ejs')%>
+
+<div class="login">
+  <div class="login-header">
+    <h1>Signup</h1>
+  </div>
+  <form action="/signup" method="POST">
+  <div class="login-form">
+    <h3>Email:</h3>
+    <input type="text" placeholder="Email" name="email"/><br>
+    <h3>Full Name:</h3>
+    <input type="text" placeholder="Full Name" name="fullName"/><br>
+    <h3>Contect:</h3>
+    <input type="text" placeholder="Contect" name="contect"/><br>
+    <h3>Password:</h3>
+    <input type="password" placeholder="Password" name="password"/>
+    <br>
+    <button class="login-button" type="submit">Signup</button>
+    <br>
+    <a class="sign-up" href="/">Login!</a>
+    <br>
+  </div>
+</form>
+</div>
+
+    <%- include('includes/footer.ejs')%>

@@ -1,0 +1,41 @@
+<%- include('includes/head.ejs')%>
+
+<%- include('includes/navbar.ejs')%>
+
+<!-- <h1>No Products....</h1> -->
+<% if(products.length != 0) { %>
+    
+<div class="container row" style="margin-inline-start: 20px; margin-top: 15px;">
+    <% for (let prods of products) { %>
+       
+    <div class="card mycard1">
+        <h4 style="margin-top: 5px;" class="card-title"><%= prods.productTitle%></h4>
+
+      <img style="height: 200px;"  src="<%= prods.image %>">
+      <div class="card-body">
+        <p class="card-text"><%= prods.price%></p>
+     
+
+        <p class="card-text"><%= prods.productDesc%></p>
+
+        <a class="btn btn-outline-info" href="/product/<%= prods._id%>">Details</a>
+        <% if (isAuth) { %>
+            <%- include('add-to-card.ejs',{prods: prods})%>
+        <% } %>    
+        <!-- <a class="btn btn-outline-info" href="#">Add to Card</a> -->
+      </div>
+    </div>
+    <div style="margin-inline-start: 40px;">
+    </div>
+
+
+    <% } %>
+    <div style="margin-top: 10px;"></div>
+  </div>
+
+
+  <% } else { %>
+    <h1>No Product Found...</h1>
+    <% } %>
+
+    <%- include('includes/footer.ejs')%>

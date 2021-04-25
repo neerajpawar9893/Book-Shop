@@ -1,0 +1,30 @@
+<%- include('includes/head.ejs')%>
+
+<%- include('includes/navbar.ejs')%>
+
+<!-- <h1>This is cart....</h1> -->
+
+<main class="container">
+    <% if(products.length > 0) { %>
+            <% products.forEach(p => { %>
+                
+        <div class="card mycard" >
+                <h1><%= p.productId.productTitle %></h1>
+                <h3>Quantity: <%= p.quantity %></h3>
+                </div>
+            <% }) %>
+        <hr>
+        <div style="text-align: center;">
+            <h4>Total: <%= totalSum%></h4>
+        </div>
+        <form action="/creat-order" method="POST" style="text-align: center;">
+            <input type="hidden" name="productId" value="<%= products._id %>">
+            <button  class="btn btn-outline-info" type="Submit">Order</button>
+        </form>
+        <% } else { %>
+            <h2>No Product in Cart</h2>
+            <% } %>
+
+</main>
+
+<%- include('includes/footer.ejs')%>

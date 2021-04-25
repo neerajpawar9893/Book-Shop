@@ -1,0 +1,30 @@
+<%- include('../includes/head.ejs')%>
+
+<%- include('../includes/navbar.ejs')%>
+
+<div class="login">
+  <div class="login-header">
+    <h1>Add Product</h1>
+  </div>
+  <form action="/addProduct" method="POST" enctype="multipart/form-data">
+  <div class="login-form">
+    <h3>Product Title</h3>
+    <input type="text" placeholder="Product Title" name="productTitle"/><br>
+    <h3>Price</h3>
+    <input type="text" placeholder="Price" name="price"/><br>
+    <h3>Product Image:</h3>
+    <input type="file"  name="image"/>
+    <br>
+    <h3>Product Description:</h3>
+    <!-- <input type="text"  name="productDesc"/> -->
+    <textarea placeholder="Product Description..." name="productDesc" cols="54" rows="3"></textarea>
+    <br>
+    <button class="login-button" type="submit">Add Product</button>
+    <!-- <input type="button" value="Login" class="login-button"/> -->
+    <br>
+    
+  </div>
+</form>
+</div>
+
+    <%- include('../includes/footer.ejs')%>

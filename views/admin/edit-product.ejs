@@ -1,0 +1,31 @@
+<%- include('../includes/head.ejs')%>
+
+<%- include('../includes/navbar.ejs')%>
+
+<div class="login">
+  <div class="login-header">
+    <h1>Add Product</h1>
+  </div>
+  <form action="/admin/edit-product" method="POST" enctype="multipart/form-data">
+  <div class="login-form">
+    <input type="hidden" value="<%= product._id %>" name="productId">
+    <h3>Product Title</h3>
+    <input type="text" value="<%= product.productTitle%>" name="productTitle"/><br>
+    <h3>Price</h3>
+    <input type="text" value="<%= product.price%>" name="price"/><br>
+    <h3>Product Image:</h3>
+    <input type="file"  name="image"/>
+    <br>
+    <h3>Product Description:</h3>
+    <!-- <input type="text"  name="productDesc"/> -->
+    <textarea  name="productDesc" value="<%= product.productDesc%>" cols="54" rows="3"><%= product.productDesc%></textarea>
+    <br>
+    <button class="login-button" type="submit">Update Product</button>
+    <!-- <input type="button" value="Login" class="login-button"/> -->
+    <br>
+    
+  </div>
+</form>
+</div>
+
+    <%- include('../includes/footer.ejs')%>

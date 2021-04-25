@@ -1,0 +1,31 @@
+<%- include('includes/head.ejs')%>
+
+<%- include('includes/navbar.ejs')%>
+
+<!-- <h1>This is Orders....</h1> -->
+
+<main class="container">
+    <% if(orders.length > 0) { %>
+            <% orders.forEach(order => { %>
+                
+        <div class="card mycard" >
+                <h3>Order -#<%= order._id %></h3>
+                <% order.products.forEach(p => { %>
+                    <h5>Product: <%= p.product.productTitle %></h5>
+                <h5>Quantity: <%= p.quantity %></h5>
+        <input type="hidden" name="productId" value="<%= orders._id %>">
+
+                <% }); %>
+                </div>
+            <% }) %>
+        <hr>
+        <div style="text-align: center;">
+        </div>
+        
+        <% } else { %>
+            <h2>No Product in Order</h2>
+            <% } %>
+</main>
+
+
+<%- include('includes/footer.ejs')%>
